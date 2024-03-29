@@ -115,11 +115,23 @@ namespace WeaponPaints
 		{
 			AddCommand($"css_{Config.Additional.CommandSkin}", "Skins info", (player, info) =>
 			{
+				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+                {
+					player!.Print("Please link your account with command !link then rejoin the server to use skins.");
+                    return;
+                };
+				
 				if (!Utility.IsPlayerValid(player)) return;
 				OnCommandWS(player, info);
 			});
 			AddCommand($"css_{Config.Additional.CommandRefresh}", "Skins refresh", (player, info) =>
 			{
+				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+                {
+					player!.Print("Please link your account with command !link then rejoin the server to use skins.");
+                    return;
+                };
+				
 				if (!Utility.IsPlayerValid(player)) return;
 				OnCommandRefresh(player, info);
 			});
@@ -127,6 +139,12 @@ namespace WeaponPaints
 			{
 				AddCommand($"css_{Config.Additional.CommandKill}", "kill yourself", (player, info) =>
 				{
+					if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+					{
+						player!.Print("Please link your account with command !link then rejoin the server to use skins.");
+						return;
+					};
+				
 					if (player == null || !Utility.IsPlayerValid(player) || player.PlayerPawn.Value == null || !player!.PlayerPawn.IsValid) return;
 
 					player.PlayerPawn.Value.CommitSuicide(true, false);
@@ -186,6 +204,12 @@ namespace WeaponPaints
 			}
 			AddCommand($"css_{Config.Additional.CommandKnife}", "Knife Menu", (player, info) =>
 			{
+				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+                {
+					player!.Print("Please link your account with command !link then rejoin the server to use skins.");
+                    return;
+                };
+				
 				if (!Utility.IsPlayerValid(player) || !g_bCommandsAllowed) return;
 
 				if (player == null || player.UserId == null) return;
@@ -331,6 +355,12 @@ namespace WeaponPaints
 			// Command to open the weapon selection menu for players
 			AddCommand($"css_{Config.Additional.CommandSkinSelection}", "Skins selection menu", (player, info) =>
 					{
+						if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+						{
+							player!.Print("Please link your account with command !link then rejoin the server to use skins.");
+							return;
+						};
+				
 						if (!Utility.IsPlayerValid(player)) return;
 
 						if (player == null || player.UserId == null) return;
@@ -446,6 +476,12 @@ namespace WeaponPaints
 			// Command to open the weapon selection menu for players
 			AddCommand($"css_{Config.Additional.CommandGlove}", "Gloves selection menu", (player, info) =>
 							{
+								if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+								{
+									player!.Print("Please link your account with command !link then rejoin the server to use skins.");
+									return;
+								};
+				
 								if (!Utility.IsPlayerValid(player) || !g_bCommandsAllowed) return;
 
 								if (player == null || player.UserId == null) return;
@@ -533,6 +569,12 @@ namespace WeaponPaints
 			AddCommand($"css_{Config.Additional.CommandAgent}", "Agents selection menu", (player, info) =>
 			{
 				if (!Utility.IsPlayerValid(player) || !g_bCommandsAllowed) return;
+				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+                {
+					player!.Print("Please link your account with command !link then rejoin the server to use skins.");
+                    return;
+                };
+				
 
 				if (player == null || player.UserId == null) return;
 
@@ -683,6 +725,12 @@ namespace WeaponPaints
 				if (!Utility.IsPlayerValid(player) || !g_bCommandsAllowed) return;
 
 				if (player == null || player.UserId == null) return;
+				
+				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+                {
+                    player!.Print("Please link your account with command !link then rejoin the server to use skins.");
+                    return;
+                };
 
 				if (player != null && !commandsCooldown.TryGetValue(player.Slot, out DateTime cooldownEndTime) ||
 	player != null && DateTime.UtcNow >= (commandsCooldown.TryGetValue(player.Slot, out cooldownEndTime) ? cooldownEndTime : DateTime.UtcNow))
