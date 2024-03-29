@@ -2,6 +2,7 @@
 using CounterStrikeSharp.API.Modules.Commands;
 using CounterStrikeSharp.API.Modules.Menu;
 using Newtonsoft.Json.Linq;
+using CounterStrikeSharp.API.Modules.Admin;
 
 namespace WeaponPaints
 {
