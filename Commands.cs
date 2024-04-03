@@ -34,6 +34,8 @@ namespace WeaponPaints
 
 					if (weaponSync != null)
 					{
+						_ = Task.Run(async () => await weaponSync.GetPlayerData(playerInfo));
+						/*
 						if (Config.Additional.SkinEnabled)
 						{
 							_ = Task.Run(async () => await weaponSync.GetWeaponPaintsFromDatabase(playerInfo));
@@ -54,6 +56,7 @@ namespace WeaponPaints
 						{
 							_ = Task.Run(async () => await weaponSync.GetMusicFromDatabase(playerInfo));
 						}
+						*/
 
 						RefreshGloves(player);
 						RefreshWeapons(player);
