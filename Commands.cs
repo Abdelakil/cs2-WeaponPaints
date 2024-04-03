@@ -119,7 +119,7 @@ namespace WeaponPaints
 		{
 			AddCommand($"css_{Config.Additional.CommandSkin}", "Skins info", (player, info) =>
 			{
-				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/linked"))
                 {
 					player!.Print("Please link your account with command !link then rejoin the server to use skins.");
                     return;
@@ -130,7 +130,7 @@ namespace WeaponPaints
 			});
 			AddCommand($"css_{Config.Additional.CommandRefresh}", "Skins refresh", (player, info) =>
 			{
-				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/linked"))
                 {
 					player!.Print("Please link your account with command !link then rejoin the server to use skins.");
                     return;
@@ -143,7 +143,7 @@ namespace WeaponPaints
 			{
 				AddCommand($"css_{Config.Additional.CommandKill}", "kill yourself", (player, info) =>
 				{
-					if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+					if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/linked"))
 					{
 						player!.Print("Please link your account with command !link then rejoin the server to use skins.");
 						return;
@@ -208,7 +208,7 @@ namespace WeaponPaints
 			}
 			AddCommand($"css_{Config.Additional.CommandKnife}", "Knife Menu", (player, info) =>
 			{
-				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/linked"))
                 {
 					player!.Print("Please link your account with command !link then rejoin the server to use skins.");
                     return;
@@ -359,7 +359,7 @@ namespace WeaponPaints
 			// Command to open the weapon selection menu for players
 			AddCommand($"css_{Config.Additional.CommandSkinSelection}", "Skins selection menu", (player, info) =>
 					{
-						if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+						if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/linked"))
 						{
 							player!.Print("Please link your account with command !link then rejoin the server to use skins.");
 							return;
@@ -480,7 +480,7 @@ namespace WeaponPaints
 			// Command to open the weapon selection menu for players
 			AddCommand($"css_{Config.Additional.CommandGlove}", "Gloves selection menu", (player, info) =>
 							{
-								if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+								if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/linked"))
 								{
 									player!.Print("Please link your account with command !link then rejoin the server to use skins.");
 									return;
@@ -573,7 +573,7 @@ namespace WeaponPaints
 			AddCommand($"css_{Config.Additional.CommandAgent}", "Agents selection menu", (player, info) =>
 			{
 				if (!Utility.IsPlayerValid(player) || !g_bCommandsAllowed) return;
-				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/linked"))
                 {
 					player!.Print("Please link your account with command !link then rejoin the server to use skins.");
                     return;
@@ -730,7 +730,7 @@ namespace WeaponPaints
 
 				if (player == null || player.UserId == null) return;
 				
-				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/flag"))
+				if (!AdminManager.PlayerHasPermissions(player, "@discord_utilities/linked"))
                 {
                     player!.Print("Please link your account with command !link then rejoin the server to use skins.");
                     return;
